@@ -36,12 +36,14 @@ class Email
         // ----------------------- SET HTML ----------------------- // 
         $mail->isHTML(TRUE);
         $mail->CharSet = 'UTF-8';
-
+        
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has Creado tu cuenta en Uptask, solo debes confirmarla presionando el siguiente enlace</p>";
         $contenido .= "<p>Presiona aquí: <a href=" .$_ENV['SERVER_HOST'] . "confirmar?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
+
+        debuguear($contenido);
 
         $mail->Body = $contenido;
         $mail->send();

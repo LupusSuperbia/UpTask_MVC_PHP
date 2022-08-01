@@ -95,7 +95,7 @@ class LoginController{
                 // Mandar Email 
                 $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
             
-
+                
                 $email->enviarConfirmacion();
 
                 if($resultado){
@@ -220,7 +220,7 @@ class LoginController{
         } else {
             // Confirmar la cuenta
             $usuario->confirmado = 1;
-            $usuario->token = null;
+            $usuario->token = ' ';
             unset($usuario->password2);
             
             // Guardar en la bd
