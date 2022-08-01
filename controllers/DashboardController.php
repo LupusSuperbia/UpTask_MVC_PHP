@@ -111,7 +111,6 @@ class DashboardController
 
     public static function proyecto(Router $router)
     {
-
         session_start();
         isAuth();
 
@@ -125,7 +124,6 @@ class DashboardController
         if ($proyecto->propietarioId !== $_SESSION['id']) {
             header('location: /dashboard');
         }
-
         $nombre = $proyecto->proyecto;
         $alertas = [];
 
