@@ -29,7 +29,7 @@ class Email
         $mail->Username = $_ENV['MAIL_USER'];
         $mail->Password = $_ENV['MAIL_PASS'];
 
-        $mail->setFrom($_ENV['MAIL_USER'], 'Prueba Agus');
+        $mail->setFrom($_ENV['MAIL_USER'], 'UpTask Prueba');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Confirma tu cuenta';
 
@@ -59,7 +59,7 @@ class Email
         $mail->Username = $_ENV['MAIL_USER'];
         $mail->Password = $_ENV['MAIL_PASS'];
 
-        $mail->setFrom($_ENV['MAIL_USER'], 'Prueba Agus');
+        $mail->setFrom($_ENV['MAIL_USER'], 'UpTask Prueba');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Reestablecer tu cuenta';
 
@@ -69,7 +69,7 @@ class Email
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has Solicitado cambiar la password de tu cuenta en Uptask, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aquí: <a href=" . $_ENV['SERVER_HOST'] ."'http://localhost:3000/reestablecer?token=" . $this->token . "'>Reestablecer Password</a></p>";
+        $contenido .= "<p>Presiona aquí: <a href=" . $_ENV['SERVER_HOST'] ."'/reestablecer?token=" . $this->token . "'>Reestablecer Password</a></p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
